@@ -6,6 +6,8 @@ import MaintenanceCompanies from "./routes/MaintenanceCompanies";
 import GuestLayout from "./layouts/GuestLayout";
 import Login from "./routes/Login";
 import Signup from "./routes/Signup";
+import Aircraft from "./routes/Aircraft";
+import ServiceRequests from "./routes/ServiceRequests";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/maintenance-companies",
         element: <MaintenanceCompanies />,
+      },
+      {
+        path: "/aircraft",
+        element: <Aircraft />,
+      },
+      {
+        path: "/service-requests",
+        element: <ServiceRequests />,
       },
     ],
   },
