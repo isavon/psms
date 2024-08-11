@@ -6,6 +6,12 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
+/**
+ * Class AuthTest
+ *
+ * @author Ivan Savon <isavon.we@gmail.com>
+ * @package Tests\Feature
+ */
 class AuthTest extends TestCase
 {
     use RefreshDatabase;
@@ -43,6 +49,25 @@ class AuthTest extends TestCase
         ]);
 
         $response->assertStatus(422);
+    }
+
+    public function test_login_wrong_data()
+    {
+        $response = $this->json('POST', '/api/login', [
+            'password' => 'q11',
+        ]);
+
+        $response->assertStatus(422);
+    }
+
+    public function test_login_ok()
+    {
+        $response = $this->json('POST', '/api/login', [
+            'email' => 'test@test.com',
+            'password' => 'q11',
+        ]);
+
+        $response->assertStatus(200);
     }
 
     public function test_logout_ok()
