@@ -43,9 +43,7 @@ class MaintenanceCompanyTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJson([
-                'data' => [
-                    'name' => 'SkyTech Maintenance',
-                ]
+                'name' => 'SkyTech Maintenance',
             ])
         ;
     }
@@ -66,9 +64,7 @@ class MaintenanceCompanyTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJson([
-                'data' => [
-                    'name' => 'New Company Name',
-                ]
+                'name' => 'New Company Name',
             ])
         ;
     }

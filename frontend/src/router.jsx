@@ -8,6 +8,7 @@ import Login from "./routes/Login";
 import Signup from "./routes/Signup";
 import Aircraft from "./routes/Aircraft";
 import ServiceRequests from "./routes/ServiceRequests";
+import MaintenanceCompaniesForm from "./forms/MaintenanceCompaniesForm";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "/maintenance-companies",
         element: <MaintenanceCompanies />,
+      },
+      {
+        path: "/maintenance-companies/create",
+        element: <MaintenanceCompaniesForm key="companyCreate" />,
+      },
+      {
+        path: "/maintenance-companies/:id",
+        element: <MaintenanceCompaniesForm key="companyUpdate" />,
       },
       {
         path: "/aircraft",

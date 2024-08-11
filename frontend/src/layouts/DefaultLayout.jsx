@@ -91,7 +91,7 @@ export default function DefaultLayout() {
       </svg>
 
       <header className="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Адміністративна панель</a>
+        <Link to="/" className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white">Адміністративна панель</Link>
 
         <ul className="navbar-nav flex-row">
           <li className="nav-item text-nowrap">
@@ -123,7 +123,7 @@ export default function DefaultLayout() {
               <div className="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                 <ul className="nav flex-column">
                   <li className="nav-item">
-                    <Link to="/" className="nav-link d-flex align-items-center gap-2 active">
+                    <Link to="/" className="nav-link d-flex align-items-center gap-2">
                       <svg className="bi"><use href="#house-fill" /></svg>
                       Головна
                     </Link>
@@ -142,7 +142,7 @@ export default function DefaultLayout() {
                   </li>
                   <li className="nav-item">
                     <Link to="/service-requests" className="nav-link d-flex align-items-center gap-2">
-                      <svg class="bi"><use href="#file-earmark-text" /></svg>
+                      <svg className="bi"><use href="#file-earmark-text" /></svg>
                       Запити на обслуговування
                     </Link>
                   </li>

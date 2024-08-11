@@ -25,7 +25,7 @@ class MaintenanceCompanyController extends Controller
     public function index()
     {
         return MaintenanceCompanyResource::collection(
-            MaintenanceCompany::query()->orderBy('id', 'desc')->paginate()
+            MaintenanceCompany::query()->orderBy('id', 'desc')->get()
         );
     }
 

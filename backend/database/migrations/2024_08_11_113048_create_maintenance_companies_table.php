@@ -21,9 +21,9 @@ class CreateMaintenanceCompaniesTable extends Migration
         Schema::create('maintenance_companies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address');
-            $table->string('number');
-            $table->string('specialization');
+            $table->string('address')->nullable();
+            $table->string('number')->nullable();
+            $table->string('specialization')->nullable();
             $table->timestamps();
         });
     }

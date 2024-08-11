@@ -31,9 +31,9 @@ class UpdateMaintenanceCompanyRequest extends FormRequest
     {
         return [
             'name' => 'required|string|unique:maintenance_companies,name,' . $this->id,
-            'address' => 'string|max:255',
-            'number' => 'string|max:255',
-            'specialization' => 'string|max:255',
+            'address' => 'nullable|string|max:255',
+            'number' => 'nullable|string|max:255',
+            'specialization' => 'nullable|string|max:255',
         ];
     }
 }
