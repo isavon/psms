@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Aircraft;
 use App\Models\MaintenanceCompany;
 use Illuminate\Database\Seeder;
 
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         MaintenanceCompany::factory(30)->create();
+        Aircraft::factory(20)->create();
         // \App\Models\User::factory(10)->create();
     }
 }
