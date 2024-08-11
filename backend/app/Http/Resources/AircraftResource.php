@@ -28,6 +28,7 @@ class AircraftResource extends JsonResource
             'serial_number' => $this->serial_number,
             'registration' => $this->registration,
             'id_maintenance_company' => $this->id_maintenance_company,
+            'maintenance_company_name' => !empty($this->maintenanceCompany) ? $this->maintenanceCompany->name : '',
             'created_at' => $this->created_at->format('d.m.Y H:i:s'),
         ];
     }

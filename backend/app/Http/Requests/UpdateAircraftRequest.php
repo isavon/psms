@@ -31,7 +31,7 @@ class UpdateAircraftRequest extends FormRequest
     {
         return [
             'model' => 'required|string|unique:aircraft,model,' . $this->id,
-            'serial_number' => 'required|numeric',
+            'serial_number' => 'required|numeric|max:1000000',
             'registration' => 'required|string|max:6',
             'id_maintenance_company' => 'nullable|numeric',
         ];

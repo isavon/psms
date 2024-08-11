@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasRelationships;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,4 +22,9 @@ class Aircraft extends Model
         'registration',
         'id_maintenance_company',
     ];
+
+    public function MaintenanceCompany()
+    {
+        return $this->hasOne(MaintenanceCompany::class, 'id', 'id_maintenance_company');
+    }
 }

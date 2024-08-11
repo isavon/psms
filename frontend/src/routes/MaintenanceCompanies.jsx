@@ -30,7 +30,6 @@ export default function MaintenanceCompanies() {
 
     axiosClient.delete(`/maintenance-company/${id}`)
       .then(() => {
-        // todo notification
         getCompanies();
       })
       ;

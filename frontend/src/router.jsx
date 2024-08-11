@@ -9,6 +9,7 @@ import Signup from "./routes/Signup";
 import Aircraft from "./routes/Aircraft";
 import ServiceRequests from "./routes/ServiceRequests";
 import MaintenanceCompaniesForm from "./forms/MaintenanceCompaniesForm";
+import AircraftForm from "./forms/AircraftForm";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,14 @@ const router = createBrowserRouter([
       {
         path: "/aircraft",
         element: <Aircraft />,
+      },
+      {
+        path: "/aircraft/create",
+        element: <AircraftForm key="aircraftCreate" />,
+      },
+      {
+        path: "/aircraft/:id",
+        element: <AircraftForm key="aircraftUpdate" />,
       },
       {
         path: "/service-requests",

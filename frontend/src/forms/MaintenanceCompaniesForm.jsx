@@ -41,13 +41,7 @@ export default function MaintenanceCompaniesForm() {
         .catch(err => {
           const { response } = err;
           if (response && response.status === 422) {
-            if (response.data.errors) {
-              setErrors(response.data.errors);
-            } else {
-              setErrors({
-                name: [response.data.message]
-              });
-            }
+            setErrors(response.data.errors);
           }
         })
         ;
@@ -59,13 +53,7 @@ export default function MaintenanceCompaniesForm() {
         .catch(err => {
           const { response } = err;
           if (response && response.status === 422) {
-            if (response.data.errors) {
-              setErrors(response.data.errors);
-            } else {
-              setErrors({
-                name: [response.data.message]
-              });
-            }
+            setErrors(response.data.errors);
           }
         })
         ;

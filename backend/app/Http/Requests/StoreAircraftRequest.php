@@ -31,7 +31,7 @@ class StoreAircraftRequest extends FormRequest
     {
         return [
             'model' => 'required|string|unique:aircraft,model',
-            'serial_number' => 'required|numeric',
+            'serial_number' => 'required|numeric|max:1000000',
             'registration' => 'required|string|max:6',
             'id_maintenance_company' => 'nullable|numeric',
         ];
