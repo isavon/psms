@@ -1,7 +1,33 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
+import { useStateContext } from "../store/ContentProvider";
+import { useEffect } from "react";
 import "../styles/default.css";
+import axiosClient from "../axios-client";
 
 export default function DefaultLayout() {
+  const { user, token, setUser, setToken } = useStateContext();
+
+  useEffect(() => {
+    axiosClient.get("/user")
+      .then(({ data }) => {
+        setUser(data);
+      });
+  }, []);
+
+  if (!token) {
+    return <Navigate to="/login" />
+  }
+
+  const onLogout = (e) => {
+    e.preventDefault();
+
+    axiosClient.post("/logout")
+      .then(() => {
+        setUser({});
+        setToken(null);
+      });
+  }
+
   return (
     <>
       <svg xmlns="http://www.w3.org/2000/svg" className="d-none">
@@ -70,7 +96,7 @@ export default function DefaultLayout() {
         <ul className="navbar-nav flex-row">
           <li className="nav-item text-nowrap">
             <button className="nav-link px-3 text-white" type="button">
-              Test User
+              {user ? user.name : ''}
             </button>
           </li>
           <li className="nav-item text-nowrap d-md-none">
@@ -126,7 +152,7 @@ export default function DefaultLayout() {
 
                 <ul className="nav flex-column mb-auto">
                   <li className="nav-item">
-                    <a className="nav-link d-flex align-items-center gap-2" href="#">
+                    <a className="nav-link d-flex align-items-center gap-2" href="#" onClick={onLogout}>
                       <svg className="bi"><use href="#door-closed" /></svg>
                       Вийти
                     </a>
