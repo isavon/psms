@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\MaintenanceCompanyController;
 use App\Http\Controllers\Api\AircraftController;
+use App\Http\Controllers\Api\ServiceRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,4 @@ Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::apiResource('/maintenance-company', MaintenanceCompanyController::class);
 Route::apiResource('/aircraft', AircraftController::class);
+Route::apiResource('/service-request', ServiceRequestController::class);
