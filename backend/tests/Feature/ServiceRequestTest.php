@@ -24,7 +24,7 @@ class ServiceRequestTest extends TestCase
             'aircraft_id' => '10',
             'issue' => 'Engine inspection required',
             'priority' => 'high',
-            'due_date' => '2024-08-15',
+            'due_date' => '15.08.2024',
             'status' => 'awaits',
         ]);
 
@@ -70,7 +70,7 @@ class ServiceRequestTest extends TestCase
             'aircraft_id' => '20',
             'issue' => 'Engine inspection required',
             'priority' => 'high',
-            'due_date' => '2024-08-15',
+            'due_date' => '24.08.2024',
             'status' => 'awaits',
         ]);
 

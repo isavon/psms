@@ -42,10 +42,6 @@ export default function AircraftForm() {
       ;
   }, []);
 
-  const getAircraft = () => {
-
-  }
-
   const onSubmit = (e) => {
     e.preventDefault();
 

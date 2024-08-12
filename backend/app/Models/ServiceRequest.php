@@ -23,4 +23,26 @@ class ServiceRequest extends Model
         'maintenance_company_id',
         'status',
     ];
+
+    public $priorities = [
+        'low' => 'Низький',
+        'medium' => 'Середній',
+        'high' => 'Високий',
+    ];
+
+    public $statuses = [
+        'awaits' => 'Очікує',
+        'in progress' => 'В процесі',
+        'completed' => 'Завершено',
+    ];
+
+    public function Aircraft()
+    {
+        return $this->hasOne(Aircraft::class, 'id', 'aircraft_id');
+    }
+
+    public function MaintenanceCompany()
+    {
+        return $this->hasOne(MaintenanceCompany::class, 'id', 'maintenance_company_id');
+    }
 }

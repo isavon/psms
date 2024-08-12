@@ -25,11 +25,15 @@ class ServiceRequestResource extends JsonResource
         return [
             'id' => $this->id,
             'aircraft_id' => $this->aircraft_id,
+            'aircraft_model' => !empty($this->aircraft) ? $this->aircraft->model : '',
             'issue' => $this->issue,
             'priority' => $this->priority,
-            'due_date' => $this->due_date,
+            'priorities' => $this->priorities,
+            'due_date' => date('d.m.Y', strtotime($this->due_date)),
             'maintenance_company_id' => $this->maintenance_company_id,
+            'maintenance_company_name' => !empty($this->maintenanceCompany) ? $this->maintenanceCompany->name : '',
             'status' => $this->status,
+            'statuses' => $this->statuses,
             'created_at' => $this->created_at->format('d.m.Y H:i:s'),
         ];
     }

@@ -25,7 +25,7 @@ class AircraftController extends Controller
     public function index()
     {
         return AircraftResource::collection(
-            Aircraft::query()->orderBy('id', 'desc')->with('maintenanceCompany')->get()
+            Aircraft::query()->orderBy('id', 'desc')->get()
         );
     }
 

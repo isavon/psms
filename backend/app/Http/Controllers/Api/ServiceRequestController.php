@@ -38,6 +38,7 @@ class ServiceRequestController extends Controller
     public function store(StoreServiceRequestRequest $request)
     {
         $data = $request->validated();
+        $data['due_date'] = date('Y-m-d', strtotime($data['due_date']));
         $serviceRequest = ServiceRequest::create($data);
         return response(new ServiceRequestResource($serviceRequest), 201);
     }
@@ -63,6 +64,7 @@ class ServiceRequestController extends Controller
     public function update(UpdateServiceRequestRequest $request, ServiceRequest $serviceRequest)
     {
         $data = $request->validated();
+        $data['due_date'] = date('Y-m-d', strtotime($data['due_date']));
         $serviceRequest->update($data);
         return new ServiceRequestResource($serviceRequest);
     }
